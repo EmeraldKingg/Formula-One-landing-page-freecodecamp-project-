@@ -2,20 +2,20 @@
 
 > *“Speed. Precision. Passion. This is Formula One.”*  
 
-Welcome to my **Formula One Landing Page**, a sleek and modern web experience that captures the thrill of Formula 1 racing — from the roar of the engines to the elegance of the teams and drivers.  
+Welcome to my **Formula One Landing Page**, a sleek and modern web experience that captures the thrill of Formula 1 racing, from the roar of the engines to the elegance of the teams and drivers.  
 
-Built as part of my **FreeCodeCamp Responsive Web Design project**, this site blends creativity, structure, and precision — just like F1 itself.  
+Built as part of my **FreeCodeCamp Responsive Web Design project**, this site blends creativity, structure, and precision, just like F1 itself.  
 
 ---
 
 ## 🌐 Live Demo  
-🚀 [View the website here](https://emeraldkingg.github.io/formula-one/)  
+🚀 [View the website here]( https://emeraldkingg.github.io/Formula-One-landing-page-freecodecamp-project-/)  
 
 ---
 
 ## 🧠 Overview  
 
-This landing page highlights key aspects of the **2025 F1 season** — including teams, drivers, and races — while giving users the chance to subscribe for updates and explore official F1 merchandise.  
+This landing page highlights key aspects of the **2025 F1 season** including teams, drivers, and races, while giving users the chance to subscribe for updates and explore official F1 merchandise.  
 
 ✨ Every section is designed with accessibility, visual balance, and modern web standards in mind.  
 
@@ -59,7 +59,7 @@ This landing page highlights key aspects of the **2025 F1 season** — including
 ## 🧑‍💻 Author  
 
 **👋 Eddie (Emerald Kingg)**  
-A creative developer blending tech and art — passionate about clean design, powerful storytelling, and speed (both in racing and in code).  
+A creative developer blending tech and art passionate about clean design, powerful storytelling, and speed (both in racing and in code).  
 
 > 🗯️ *“Formula 1 isn’t just a sport, it’s innovation on wheels.”*  
 
