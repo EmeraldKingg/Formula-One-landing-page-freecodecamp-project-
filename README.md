@@ -59,7 +59,7 @@ This landing page highlights key aspects of the **2025 F1 season** including tea
 
 ## 📸 Preview  
 
-*(formula 1.png)*  
+![Formula One Landing Page Screenshot](formula1.png) 
 
 ---
 ## 🧑‍💻 Author  
