@@ -18,22 +18,41 @@ const App = () => {
   const [activePage, setActivePage] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Smooth scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activePage]);
 
-  // Data
+  // Comprehensive 2026 Grid Data
   const drivers = [
     { 
-      id: 'norris', 
-      name: 'Lando Norris', 
-      team: 'McLaren', 
+      id: 'verstappen', 
+      name: 'Max Verstappen', 
+      team: 'Red Bull Racing', 
+      country: 'Netherlands', 
+      number: 1, 
+      bio: 'The benchmark of the field. Verstappen leads Red Bull into the new Ford engine era as a multi-time world champion.', 
+      color: '#0600EF', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'hadjar', 
+      name: 'Isack Hadjar', 
+      team: 'Red Bull Racing', 
+      country: 'France', 
+      number: 6, 
+      bio: 'The Red Bull junior prodigy graduated to the senior team for the 2026 regulations to partner Verstappen.', 
+      color: '#0600EF', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'hamilton', 
+      name: 'Lewis Hamilton', 
+      team: 'Ferrari', 
       country: 'UK', 
-      number: 4, 
-      bio: 'The "Carlando" era may be over, but Lando is now a proven race winner and title contender.', 
-      color: '#FF8700', 
-      img: 'https://media.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col-retina/image.png' 
+      number: 44, 
+      bio: 'Settled into Maranello, the 7-time champion hunts for the elusive 8th title in the iconic scarlet red.', 
+      color: '#E10600', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col-retina/image.png' 
     },
     { 
       id: 'leclerc', 
@@ -41,213 +60,189 @@ const App = () => {
       team: 'Ferrari', 
       country: 'Monaco', 
       number: 16, 
-      bio: 'The "Il Predestinato" of Maranello. A qualifying master who carries the hopes of Italy.', 
+      bio: 'The Prince of Monaco remains the heartbeat of Ferrari, forming the most formidable lineup on the grid.', 
       color: '#E10600', 
-      img: 'https://media.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/2col-retina/image.png' },
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/2col-retina/image.png' 
+    },
     { 
-      id: 'verstappen', 
-      name: 'Max Verstappen', 
-      team: 'Red Bull Racing', 
-      country: 'Netherlands', 
-      number: 1, 
-      bio: 'A generational talent. Three-time champion known for his uncompromising aggression and pace.', 
-      color: '#0600EF', 
-      img: 'https://media.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col-retina/image.png' },
-    { 
-      id: 'hamilton', 
-      name: 'Lewis Hamilton', 
-      team: 'Ferrari', 
+      id: 'norris', 
+      name: 'Lando Norris', 
+      team: 'McLaren', 
       country: 'UK', 
-      number: 44, 
-      bio: 'The 7-time World Champion. His move to Ferrari in 2025 shocked the sporting world.', 
-      color: '#E10600', 
-      img: 'https://media.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col-retina/image.png' }
-    { 
-      id: 'sainz', 
-      name: 'Carlos Sainz', 
-      team: 'Williams', 
-      country: 'Spain', 
-      number: 55, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#005AFF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/williams/carsai01/2026williamscarsai01right.webp' }
-    { 
-      id: 'albon', 
-      name: 'Alex Albon', 
-      team: 'Williams', 
-      country: 'Thailand', 
-      number: 23, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#005AFF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/williams/alealb01/2026williamsalealb01right.webp' }
-    { 
-      id: 'checo', 
-      name: 'Sergio "Checo" Perez', 
-      team: 'Cadillac', 
-      country: 'Mexico', 
-      number: 11, bio: 'Known as the "Minister of Defense" for his incredible tire management and ability to hold off faster cars.', 
-      color: '#FFD700', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/cadillac/serper01/2026cadillacserper01right.webp' }
-    { 
-      id: 'bottas', 
-      name: 'Valtteri Bottas', 
-      team: 'Cadillac', 
-      country: 'Finland', 
-      number: 77, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#FFD700', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/cadillac/valbot01/2026cadillacvalbot01right.webp' }
-    { 
-      id: 'alonso', 
-      name: 'Fernando Alonso', 
-      team: 'Aston Martin', 
-      country: 'Spain', 
-      number: 14, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#006F62', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/astonmartin/feralo01/2026astonmartinferalo01right.webp' }
-    { 
-      id: 'stroll', 
-      name: 'Lance Stroll', 
-      team: 'Aston Martin', 
-      country: 'Canada', 
-      number: 18, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#006F62', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/astonmartin/feralo01/2026astonmartinferalo01right.webp' }
-    { 
-      id: 'hulkenberg', 
-      name: 'Nico Hulkenberg', 
-      team: 'Audi', 
-      country: 'Germany', 
-      number: 27, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#000000', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/audi/nichul01/2026audinichul01right.webp' }
-    { 
-      id: 'bortoleto', 
-      name: 'Gabriel Bortoleto', 
-      team: 'Audi', 
-      country: 'Brazil', 
-      number: 5, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#000000', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/audi/gabbor01/2026audigabbor01right.webp' }
-    { 
-      id: 'russell', 
-      name: 'George Russell', 
-      team: 'Mercedes', 
-      country: 'UK', 
-      number: 63, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#00D2BE', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp' }
-    { 
-      id: 'antonelli', 
-      name: 'Kimi Antonelli', 
-      team: 'Mercedes', 
-      country: 'Italy', 
-      number: 12, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#00D2BE', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp' }
+      number: 4, 
+      bio: 'The cornerstone of McLaren’s championship ambitions, Norris is now a veteran leader in the Woking squad.', 
+      color: '#FF8700', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col-retina/image.png' 
+    },
     { 
       id: 'piastri', 
       name: 'Oscar Piastri', 
       team: 'McLaren', 
       country: 'Australia', 
       number: 81, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
+      bio: 'Ice-cool under pressure, Piastri has evolved into a consistent race winner alongside Norris.', 
       color: '#FF8700', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/mclaren/oscpia01/2026mclarenoscpia01right.webp' }
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/2col-retina/image.png' 
+    },
     { 
-      id: 'hadjar', 
-      name: 'Isack Hadjar', 
-      team: 'Red Bull Racing', 
-      country: 'France', 
-      number: 6, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#0600EF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/redbullracing/isahad01/2026redbullracingisahad01right.webp' 
-    }
-    { 
-      id: 'bearman', 
-      name: 'Oliver Bearman', 
-      team: 'Haas F1 Team', 
+      id: 'russell', 
+      name: 'George Russell', 
+      team: 'Mercedes', 
       country: 'UK', 
-      number: 87, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#FFFFFF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/haas/olibea01/2026haasolibea01right.webp' }
+      number: 63, 
+      bio: 'Now the undisputed team leader at Mercedes, Russell leads the Silver Arrows back toward the front.', 
+      color: '#00D2BE', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/2col-retina/image.png' 
+    },
     { 
-      id: 'ocon', 
-      name: 'Esteban Ocon', 
-      team: 'Haas F1 Team', 
+      id: 'antonelli', 
+      name: 'Kimi Antonelli', 
+      team: 'Mercedes', 
+      country: 'Italy', 
+      number: 12, 
+      bio: 'Italy’s new superstar. Antonelli brings raw speed and youthful energy to the Mercedes garage.', 
+      color: '#00D2BE', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/A/ANDANT01_Andrea_Kimi_Antonelli/andant01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'perez', 
+      name: 'Sergio Perez', 
+      team: 'Cadillac', 
+      country: 'Mexico', 
+      number: 11, 
+      bio: 'The Mexican veteran leads the charge for the new American entry, bringing invaluable development experience.', 
+      color: '#FFD700', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'bottas', 
+      name: 'Valtteri Bottas', 
+      team: 'Cadillac', 
+      country: 'Finland', 
+      number: 77, 
+      bio: 'The ultimate team player. Bottas joins Cadillac to form an experienced duo for the 11th team.', 
+      color: '#FFD700', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'sainz', 
+      name: 'Carlos Sainz', 
+      team: 'Williams', 
+      country: 'Spain', 
+      number: 55, 
+      bio: 'Bringing race-winning pedigree to Grove, Sainz is the catalyst for Williams’ return to the podium.', 
+      color: '#005AFF', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'albon', 
+      name: 'Alex Albon', 
+      team: 'Williams', 
+      country: 'Thailand', 
+      number: 23, 
+      bio: 'The reliable heart of Williams. Albon continues to extract every tenth of performance from the FW-series.', 
+      color: '#005AFF', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'hulkenberg', 
+      name: 'Nico Hulkenberg', 
+      team: 'Audi', 
+      country: 'Germany', 
+      number: 27, 
+      bio: 'Leading Audi’s German revolution. The Hulk’s consistency is key for the manufacturer’s debut year.', 
+      color: '#000000', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'bortoleto', 
+      name: 'Gabriel Bortoleto', 
+      team: 'Audi', 
+      country: 'Brazil', 
+      number: 5, 
+      bio: 'The F2 and F3 champion brings Brazil back to the F1 grid in the black and silver of Audi.', 
+      color: '#000000', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'alonso', 
+      name: 'Fernando Alonso', 
+      team: 'Aston Martin', 
+      country: 'Spain', 
+      number: 14, 
+      bio: 'Defying age, Alonso leads the Honda-powered Aston Martin project into the new era.', 
+      color: '#006F62', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/2col-retina/image.png' 
+    },
+    { 
+      id: 'gasly', 
+      name: 'Pierre Gasly', 
+      team: 'Alpine', 
       country: 'France', 
-      number: 31, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#FFFFFF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/haas/estoco01/2026haasestoco01right.webp' 
-    }
+      number: 10, 
+      bio: 'The experienced Frenchman carries the Alpine flag as they transition to new power unit regulations.', 
+      color: '#0090FF', 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/2col-retina/image.png' 
+    },
     { 
       id: 'lawson', 
       name: 'Liam Lawson', 
       team: 'Racing Bulls', 
       country: 'New Zealand', 
       number: 30, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
+      bio: 'The Kiwi star finally secures his full-time seat, proving he belongs at the top of the sport.', 
       color: '#6692FF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01right.webp' 
+      img: 'https://media.formula1.com/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/2col-retina/image.png' 
     }
-    { 
-      id: 'lindblad', 
-      name: 'Arvid Lindblad', 
-      team: 'Racing Bulls', 
-      country: 'UK', 
-      number: 41, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#6692FF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/racingbulls/arvlin01/2026racingbullsarvlin01right.webp' 
-    }
-    { 
-      id: 'gasly', 
-      name: 'Pierre Gasly', 
-      team: 'Alpine', 
-      country: 'France', 
-      number: 6, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#0090FF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/alpine/piegas01/2026alpinepiegas01right.webp' 
-    }
-    { 
-      id: 'colapinto', 
-      name: 'Franco Colapinto', 
-      team: 'Alpine', 
-      country: 'Argentina', 
-      number: 43, 
-      bio: 'The "Smooth Operator." After his shock exit from Ferrari, Carlos brings race-winning experience and tactical genius to the historic Williams outfit.', 
-      color: '#0090FF', 
-      img: 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000001/common/f1/2026/alpine/fracol01/2026alpinefracol01right.webp' 
-    }
-    
   ];
 
   const teams = [
-    { name: 'McLaren', principal: 'Andrea Stella', base: 'Woking, UK', power: 'Mercedes', desc: 'Currently the fastest car on the grid, reviving their 90s glory days.' },
-    { name: 'Ferrari', principal: 'Frédéric Vasseur', base: 'Maranello, Italy', power: 'Ferrari', desc: 'The oldest and most successful team in F1 history.' },
-    { name: 'Red Bull Racing', principal: 'Christian Horner', base: 'Milton Keynes, UK', power: 'Honda RBPT', desc: 'A modern powerhouse defined by aerodynamic genius Adrian Newey.' }
+    { 
+      name: 'McLaren', 
+      principal: 'Andrea Stella', 
+      base: 'Woking, UK', 
+      power: 'Mercedes', 
+      desc: 'Title contenders with an elite young lineup and high-performance aero.' 
+    },
+    { 
+      name: 'Ferrari', 
+      principal: 'Frédéric Vasseur', 
+      base: 'Maranello, Italy', 
+      power: 'Ferrari', 
+      desc: 'The legendary Scuderia, now home to both Leclerc and Hamilton.' 
+    },
+    { 
+      name: 'Red Bull Racing', 
+      principal: 'Christian Horner', 
+      base: 'Milton Keynes, UK', 
+      power: 'Red Bull Ford', 
+      desc: 'Entering a new era with their own in-house power unit division.' 
+    },
+    { 
+      name: 'Cadillac', 
+      principal: 'Michael Andretti', 
+      base: 'Warren, Michigan, USA', 
+      power: 'Ferrari (Initial)', 
+      desc: 'General Motors enters F1 with a mission to prove American engineering can dominate the world.' 
+    },
+    { 
+      name: 'Audi', 
+      principal: 'Mattia Binotto', 
+      base: 'Neuburg, Germany', 
+      power: 'Audi', 
+      desc: 'The German giant takes over Sauber to bring their Le Mans success to F1.' 
+    }
   ];
 
   const circuits = [
-    { name: 'Monaco', location: 'Monte Carlo', length: '3.337 km', turns: 19, desc: 'The "Jewel in the Crown". A tight, narrow street circuit where precision is everything and mistakes are permanent.' },
-    { name: 'Suzuka', location: 'Japan', length: '5.807 km', turns: 18, desc: 'A driver favorite featuring the unique "Figure-8" layout and the legendary high-speed 130R corner.' },
-    { name: 'Silverstone', location: 'United Kingdom', length: '5.891 km', turns: 18, desc: 'The birthplace of F1. Famous for the Maggotts-Becketts-Chapel complex, the ultimate test of lateral G-forces.' },
-    { name: 'Spa-Francorchamps', location: 'Belgium', length: '7.004 km', turns: 20, desc: 'The longest track on the calendar, winding through the Ardennes forest and featuring the iconic Eau Rouge climb.' }
+    { name: 'Monaco', location: 'Monte Carlo', length: '3.337 km', turns: 19, desc: 'The "Jewel in the Crown". A tight, narrow street circuit where precision is everything.' },
+    { name: 'Las Vegas', location: 'USA', length: '6.201 km', turns: 17, desc: 'The ultimate spectacle. A high-speed blast down the famous Strip.' },
+    { name: 'Suzuka', location: 'Japan', length: '5.807 km', turns: 18, desc: 'A driver favorite featuring the unique "Figure-8" layout.' },
+    { name: 'Silverstone', location: 'United Kingdom', length: '5.891 km', turns: 18, desc: 'The birthplace of F1. Home to the high-speed Maggotts and Becketts.' }
   ];
 
   const renderHome = () => (
     <div className="animate-in fade-in duration-700">
-      {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <img 
@@ -256,52 +251,45 @@ const App = () => {
           alt="F1 Track"
         />
         <div className="relative z-20 text-center px-4 max-w-4xl">
-          <h1 className="text-6xl md:text-8xl font-[Montserrat] font-black text-white mb-6 uppercase tracking-tighter italic">
-            Lights Out <span className="text-[#e10600]">&</span> Away
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-6 uppercase tracking-tighter italic">
+            2026: <span className="text-[#e10600]">New Era</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-10 font-light">
-            Experience the 2025/2026 Formula One season with real-time technical insights, driver profiles, and elite merch.
+            11 Teams. New Engines. The Cadillac Debut. Welcome to the future of racing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => setActivePage('drivers')}
               className="px-8 py-4 bg-[#e10600] text-white font-bold rounded-full uppercase tracking-wider hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
             >
-              Explore Drivers <ChevronRight size={20} />
-            </button>
-            <button 
-              onClick={() => setActivePage('merch')}
-              className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-full uppercase tracking-wider hover:bg-white hover:text-black transition-all"
-            >
-              Shop Collection
+              The 2026 Grid <ChevronRight size={20} />
             </button>
           </div>
         </div>
       </section>
 
-      {/* Quick Stats Section */}
       <section className="py-20 bg-white px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-[#e10600] rounded-full flex items-center justify-center text-white mb-6">
               <Zap size={32} />
             </div>
-            <h3 className="text-2xl font-black font-[Montserrat] mb-3 uppercase">Paddock Intel</h3>
-            <p className="text-gray-600">Deep dives into technical upgrades, wind tunnel results, and aero-efficiency charts.</p>
-          </div>
-          <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-[#e10600] rounded-full flex items-center justify-center text-white mb-6">
-              <Globe size={32} />
-            </div>
-            <h3 className="text-2xl font-black font-[Montserrat] mb-3 uppercase">Global Circuit</h3>
-            <p className="text-gray-600">Detailed breakdowns of all 24 tracks, from thermal degradation to fuel consumption stats.</p>
+            <h3 className="text-2xl font-black mb-3 uppercase">Sustainable Power</h3>
+            <p className="text-gray-600">The 2026 engines use 100% sustainable fuels and massive electrical deployment.</p>
           </div>
           <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-[#e10600] rounded-full flex items-center justify-center text-white mb-6">
               <Users size={32} />
             </div>
-            <h3 className="text-2xl font-black font-[Montserrat] mb-3 uppercase">Fan Hub</h3>
-            <p className="text-gray-600">Join a community of 2 million fans. Vote for Driver of the Day and win paddock passes.</p>
+            <h3 className="text-2xl font-black mb-3 uppercase">Cadillac Joins</h3>
+            <p className="text-gray-600">The first time in decades the F1 grid expands to 11 teams and 22 cars.</p>
+          </div>
+          <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-slate-50 hover:shadow-xl transition-shadow">
+            <div className="w-16 h-16 bg-[#e10600] rounded-full flex items-center justify-center text-white mb-6">
+              <Flag size={32} />
+            </div>
+            <h3 className="text-2xl font-black mb-3 uppercase">Global Circuit</h3>
+            <p className="text-gray-600">Expanding to new territories while maintaining the historic heart of F1.</p>
           </div>
         </div>
       </section>
@@ -311,8 +299,8 @@ const App = () => {
   const renderDrivers = () => (
     <div className="pt-32 pb-20 px-4 max-w-7xl mx-auto animate-in slide-in-from-bottom-10 duration-700">
       <div className="mb-16 text-center">
-        <h2 className="text-5xl font-black font-[Montserrat] uppercase italic mb-4">Elite Pilots</h2>
-        <p className="text-gray-600 text-lg">The fastest 20 humans on the planet.</p>
+        <h2 className="text-5xl font-black uppercase italic mb-4">The 2026 Elite</h2>
+        <p className="text-gray-600 text-lg">22 drivers. 11 teams. One Champion.</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -327,14 +315,14 @@ const App = () => {
             </div>
             <div className="p-6">
               <div className="flex justify-between items-start mb-2">
-                <span className="text-4xl font-black opacity-20 font-[Montserrat] italic">#{driver.number}</span>
-                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold uppercase tracking-widest">{driver.team}</span>
+                <span className="text-4xl font-black opacity-20 italic">#{driver.number}</span>
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest">{driver.team}</span>
               </div>
-              <h3 className="text-2xl font-black font-[Montserrat] uppercase tracking-tighter mb-4">{driver.name}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              <h3 className="text-xl font-black uppercase tracking-tighter mb-2">{driver.name}</h3>
+              <p className="text-gray-500 text-xs leading-relaxed mb-6">
                 {driver.bio}
               </p>
-              <div className="flex items-center gap-2 text-[#e10600] font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all cursor-pointer">
+              <div className="flex items-center gap-2 text-[#e10600] font-bold text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all cursor-pointer">
                 Full Profile <ChevronRight size={16} />
               </div>
             </div>
@@ -342,9 +330,8 @@ const App = () => {
         ))}
       </div>
 
-      {/* Teams Section */}
       <div className="mt-32">
-        <h2 className="text-4xl font-black font-[Montserrat] uppercase italic mb-12 text-center">The Constructors</h2>
+        <h2 className="text-4xl font-black uppercase italic mb-12 text-center">The Constructors</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teams.map((team) => (
             <div key={team.name} className="p-8 bg-black text-white rounded-3xl relative overflow-hidden group">
@@ -353,9 +340,9 @@ const App = () => {
                </div>
                <h3 className="text-3xl font-black italic mb-2">{team.name}</h3>
                <p className="text-[#e10600] font-bold mb-6 tracking-widest text-xs uppercase italic">{team.base} | {team.power}</p>
-               <p className="text-gray-400 mb-6">{team.desc}</p>
+               <p className="text-gray-400 mb-6 text-sm">{team.desc}</p>
                <div className="text-sm font-bold border-l-2 border-[#e10600] pl-4">
-                 <p className="text-gray-500">Team Principal</p>
+                 <p className="text-gray-500 text-xs uppercase">Team Principal</p>
                  <p>{team.principal}</p>
                </div>
             </div>
@@ -368,8 +355,8 @@ const App = () => {
   const renderCircuits = () => (
     <div className="pt-32 pb-20 px-4 max-w-7xl mx-auto animate-in zoom-in-95 duration-700">
       <div className="mb-16 text-center">
-        <h2 className="text-5xl font-black font-[Montserrat] uppercase italic mb-4">The Global Grid</h2>
-        <p className="text-gray-600 text-lg">24 countries. 24 battlegrounds.</p>
+        <h2 className="text-5xl font-black uppercase italic mb-4">The Global Grid</h2>
+        <p className="text-gray-600 text-lg">24 battlegrounds for the 2026 season.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-12">
@@ -393,10 +380,6 @@ const App = () => {
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Turns</p>
                   <p className="text-xl font-black italic">{track.turns}</p>
                 </div>
-                <div className="text-center">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Type</p>
-                  <p className="text-xl font-black italic">{idx === 0 ? 'Street' : 'FIA Grade 1'}</p>
-                </div>
               </div>
               <p className="text-gray-600 text-lg leading-relaxed mb-8 italic">
                 "{track.desc}"
@@ -411,43 +394,8 @@ const App = () => {
     </div>
   );
 
-  const renderMerch = () => (
-    <div className="pt-32 pb-20 px-4 max-w-7xl mx-auto animate-in fade-in duration-1000">
-       <div className="mb-16 text-center">
-        <h2 className="text-5xl font-black font-[Montserrat] uppercase italic mb-4">Official Shop</h2>
-        <p className="text-gray-600 text-lg">75th Anniversary Limited Edition Collection</p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-xl transition-all">
-             <div className="aspect-square bg-slate-50 rounded-2xl mb-6 relative overflow-hidden group">
-               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/20 backdrop-blur-sm transition-all">
-                 <button className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm uppercase">Quick View</button>
-               </div>
-               <div className="w-full h-full flex items-center justify-center">
-                 <ShoppingBag size={64} className="text-gray-200" />
-               </div>
-             </div>
-             <div className="px-2">
-               <span className="text-[10px] font-black text-[#e10600] uppercase tracking-[0.2em]">Heritage Collection</span>
-               <h3 className="text-xl font-black font-[Montserrat] uppercase mt-1">F1 75 Limited Item {i}</h3>
-               <div className="flex justify-between items-center mt-4">
-                 <span className="text-2xl font-black italic">£49.00</span>
-                 <button className="p-3 bg-black text-white rounded-xl hover:bg-[#e10600] transition-colors">
-                   <ShoppingBag size={20} />
-                 </button>
-               </div>
-             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-slate-50 text-[#101010] selection:bg-[#e10600] selection:text-white overflow-x-hidden">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-xl border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div 
@@ -457,18 +405,17 @@ const App = () => {
             <div className="bg-[#e10600] p-1.5 rounded-sm transform group-hover:rotate-12 transition-transform">
               <Trophy className="text-white" size={24} />
             </div>
-            <span className="text-xl font-black font-[Montserrat] uppercase italic tracking-tighter">
-              Formula One <span className="text-[#e10600]">Ultra</span>
+            <span className="text-xl font-black uppercase italic tracking-tighter">
+              F1 <span className="text-[#e10600]">Ultra</span> 2026
             </span>
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            {['home', 'drivers', 'grids', 'merch'].map((page) => (
+            {['home', 'drivers', 'grids'].map((page) => (
               <button
                 key={page}
                 onClick={() => setActivePage(page)}
-                className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all ${
+                className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
                   activePage === page 
                     ? 'bg-black text-white' 
                     : 'text-gray-500 hover:text-black hover:bg-gray-100'
@@ -486,84 +433,25 @@ const App = () => {
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-200 animate-in slide-in-from-top-4">
-            <div className="flex flex-col p-6 gap-4">
-              {['home', 'drivers', 'grids', 'merch'].map((page) => (
-                <button
-                  key={page}
-                  onClick={() => {
-                    setActivePage(page);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`text-left text-2xl font-black uppercase italic ${
-                    activePage === page ? 'text-[#e10600]' : 'text-gray-400'
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </nav>
 
-      {/* Page Content */}
       <main>
         {activePage === 'home' && renderHome()}
         {activePage === 'drivers' && renderDrivers()}
         {activePage === 'grids' && renderCircuits()}
-        {activePage === 'merch' && renderMerch()}
       </main>
 
-      {/* Global Footer */}
       <footer className="bg-black text-white pt-20 pb-10 px-6 mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <div className="col-span-1 md:col-span-2">
-              <h2 className="text-3xl font-black font-[Montserrat] uppercase italic mb-6">Ultra Formula</h2>
-              <p className="text-gray-400 max-w-sm mb-8 leading-relaxed">
-                The ultimate destination for the elite racing enthusiast. Bringing the paddock directly to your screen with unparalleled technical depth.
-              </p>
-              <div className="flex gap-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#e10600] cursor-pointer transition-colors">
-                    <Flag size={18} />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-sm mb-6">Quick Nav</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li className="hover:text-white cursor-pointer transition-colors">Live Timing</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Paddock News</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Technical Docs</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Ticketing</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold uppercase tracking-widest text-sm mb-6">Legal</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li className="hover:text-white cursor-pointer transition-colors">Terms of Racing</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Fan Privacy</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Cookie Policy</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-500 text-xs tracking-widest uppercase">
-              &copy; 2025 Formula One Ultra Portal. All Rights Reserved.
-            </p>
-            <div className="flex items-center gap-6 text-gray-500 uppercase text-[10px] font-black tracking-[0.3em]">
-              <span>Speed</span>
-              <span className="w-1.5 h-1.5 bg-[#e10600] rounded-full"></span>
-              <span>Precision</span>
-              <span className="w-1.5 h-1.5 bg-[#e10600] rounded-full"></span>
-              <span>Drama</span>
-            </div>
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-500 text-xs tracking-widest uppercase mb-4">
+            &copy; 2026 Formula One Ultra Portal.
+          </p>
+          <div className="flex items-center justify-center gap-6 text-gray-500 uppercase text-[10px] font-black tracking-[0.3em]">
+            <span>Speed</span>
+            <span className="w-1.5 h-1.5 bg-[#e10600] rounded-full"></span>
+            <span>Precision</span>
+            <span className="w-1.5 h-1.5 bg-[#e10600] rounded-full"></span>
+            <span>Drama</span>
           </div>
         </div>
       </footer>
