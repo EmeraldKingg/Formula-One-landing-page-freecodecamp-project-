@@ -4,20 +4,313 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formula One | Official Fan Portal</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link href="styles.css" rel="stylesheet"/>
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #101010;
+            --f1-red: #e10600; /* Official F1 Red */
+            --gray-text: #5e5e5e;
+            --bg-pale: #f3f3f3;
+            --nav-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-pale);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Navigation --- */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        #nav-bar {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        #header-img {
+            height: 30px;
+            width: auto;
+        }
+
+        .the-product {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--f1-red);
+            margin-left: 12px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--f1-red);
+        }
+
+        /* --- Hero/Email Section --- */
+        #email-section {
+            margin-top: var(--nav-height);
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1547447134-cd3f5c716030?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            border-bottom: 5px solid var(--f1-red);
+        }
+
+        #email-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        #email {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            flex-grow: 1;
+            font-size: 1rem;
+        }
+
+        #submit {
+            background: var(--f1-red);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        #submit:hover {
+            transform: scale(1.05);
+            background: #cc0500;
+        }
+
+        /* --- Features Section --- */
+        .features {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--f1-red);
+        }
+
+        .icon {
+            color: var(--f1-red);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        /* --- Video Section --- */
+        #audio {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* --- Merch Section --- */
+        #for_sale {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+        }
+
+        #for_sale h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            background-color: #ddd;
+        }
+
+        .inner-card {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--f1-red);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .main-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--black);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #b1b1b1;
+            margin-left: 10px;
+        }
+
+        .add {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        .add:hover {
+            background: var(--f1-red);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            #nav-bar { flex-direction: column; padding: 10px; }
+            #header { height: auto; position: relative; }
+            #email-section { margin-top: 0; padding: 60px 20px; }
+            .nav-links { margin-top: 15px; }
+            #email-section h2 { font-size: 1.8rem; }
+            #form { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
     <header id="header">
         <nav id="nav-bar">
             <a href="#" class="logo-container">
-                <img src="https://city-png.b-cdn.net/thumbnail/thumbnail_public/uploads/preview/hd-f1-the-official-formula-1-transparent-png-701751712229525ajvwddtfme.png?v=2025091016" alt="logo" id="header-img" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg'">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo" id="header-img">
                 <span class="the-product">Formula One</span>
             </a>
             <ul class="nav-links">
@@ -30,7 +323,7 @@
 
     <section id="email-section">
         <h2>Lights Out and Away We Go!</h2>
-        <p style="margin-bottom: 20px; opacity: 0.9;">Join 2 million fans for daily paddock updates.</p>
+        <p style="margin-bottom: 20px; font-size: 1.2rem; opacity: 0.9;">Join 2 million fans for daily paddock updates.</p>
         <form action="https://www.freecodecamp.com/email-submit" id="form">
             <input id="email" type="email" required placeholder="Enter your email address" name="email" />
             <input type="submit" id="submit" value="SUBSCRIBE" />
@@ -72,8 +365,8 @@
                     <h3>F1 75 Varsity Jacket</h3>
                     <p class="content">Celebrate 75 years of pace and passion. High-quality embroidery featuring iconic GP milestones since 1950.</p>
                     <div class="flex">
-                        <p class="main-price">£19.00</p>
-                        <p class="old-price">£45.00</p>
+                        <span class="main-price">£19.00</span>
+                        <span class="old-price">£45.00</span>
                     </div>
                     <button class="add">Add to Cart</button>
                 </div>
@@ -87,8 +380,8 @@
                     <h3>2026 Season Calendar</h3>
                     <p class="content">Never miss a session. Includes all 2026 Grand Prix dates, Sprint weekends, and circuit facts.</p>
                     <div class="flex">
-                        <p class="main-price">£15.00</p>
-                        <p class="old-price">£25.00</p>
+                        <span class="main-price">£15.00</span>
+                        <span class="old-price">£25.00</span>
                     </div>
                     <button class="add">Add to Cart</button>
                 </div>
@@ -102,8 +395,8 @@
                     <h3>Suzuka GP 2025 Poster</h3>
                     <p class="content">Limited edition Japanese Grand Prix artwork. High-gloss finish, perfect for any racing fan's wall.</p>
                     <div class="flex">
-                        <p class="main-price">£39.00</p>
-                        <p class="old-price">£49.00</p>
+                        <span class="main-price">£39.00</span>
+                        <span class="old-price">£49.00</span>
                     </div>
                     <button class="add">Add to Cart</button>
                 </div>
