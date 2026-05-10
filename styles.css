@@ -1,221 +1,293 @@
 :root {
- --white: hsl(0, 0%, 100%);
- --text: hsl(228, 12%, 48%);
- --pale: hsl(32, 37%, 92%);
- --red: hsl(1, 100%, 50%);
- --header-text: hsl(212, 21%, 14%);
-}
+            --white: #ffffff;
+            --black: #101010;
+            --f1-red: #e10600; /* Official F1 Red */
+            --gray-text: #5e5e5e;
+            --bg-pale: #f3f3f3;
+            --nav-height: 80px;
+        }
 
-* {
- margin: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-  background-color: var(--pale);
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-pale);
+            color: var(--black);
+            line-height: 1.6;
+        }
 
-}
+        /* --- Header & Navigation --- */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
 
-#header-img {
- width: 60px;
- object: contain;
-}
+        #nav-bar {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-#nav-bar {
- display: flex;
- flex-direction: column;
- justify-content: space-around;
- align-items: center;
- position: fixed;
- width: 100%;
- top: 0;
- background-color: var(--white);
- padding: 10px;
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
 
-.nav-links {
- display: flex;
- list-style: none;
-}
+        #header-img {
+            height: 40px;
+            width: auto;
+        }
 
-.nav-links a {
- text-decoration: none;
- color: var(--text);
- padding: 0 10px; 
-}
+        .the-product {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--f1-red);
+            margin-left: 12px;
+            text-transform: uppercase;
+        }
 
-.logo-container {
- display: flex;
- align-items: center;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
 
-.the-product {
-  font-size: 25px;
-  margin-left: 10px;
-  font-weight: 700;
-  font-family: "montserrat";
-}
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
 
-#email-section {
-  margin-top: 100px;
-}
+        .nav-link:hover {
+            color: var(--f1-red);
+        }
 
-input {
-  padding: 8px;
-  border: 1px solid var(--red);
-}
+        /* --- Hero/Email Section --- */
+        #email-section {
+            margin-top: calc(var(--nav-height) + 40px);
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1547447134-cd3f5c716030?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+        }
 
-#submit {
-  background-color: var(--red);
-  color: var(--white);
-  cursor: pointer; 
-}
+        #email-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-section::before {
-  display: block;
-  content: " ";
-  margin-top: -100px;
-  height: 100px;
-  visibility: hidden;
-  pointer-events: none;
-}
+        #form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-section {
-  margin: 40px 20px;
-  text-align: center;
-}
+        #email {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            flex-grow: 1;
+        }
 
-h2{
-  font-family: "fraunces";
-  margin-bottom: 10px;
-}
+        #submit {
+            background: var(--f1-red);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
 
-.icon {
-  color: var(--red);
-  margin-right: 30px;
-}
+        #submit:hover {
+            transform: scale(1.05);
+            background: #cc0500;
+        }
 
-#features {
-  text-align: left;
-  max-width: 800px;
-  margin: auto;
-}  
-  
-.feature {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  font-family: "monserrat";
-}
+        /* --- Features Section (Grid) --- */
+        .features {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.product-image {
-  width: 100%;
-  margin: auto;
-  height: 500px;
-  border: 1px solid var(--text);
-  border-radius: 10px 10px 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+        .feature {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
 
-.product1 {
-  background-image: url(https://images.footballfanatics.com/formula-1-merchandise/formula-1-75-varsity-jacket_ss5_p-203082258+pv-1+u-e46rbrznsi8apeczl6wa+v-fciw5yjpuz3qnavib62n.jpg?_hv=2&w=1018);
-}
+        .feature:hover {
+            transform: translateY(-5px);
+        }
 
-.product2 {
-  background-image: url(https://images.footballfanatics.com/formula-1-merchandise/formula-1-2026-calendar_ss5_p-203133101+pv-1+u-pjwisbn4v1uuhbsoqunt+v-dmujjtapwiky8y7bohbz.jpg?_hv=2&w=1018);
-}
+        .icon {
+            color: var(--f1-red);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-.product3 {
-  background-image: url(https://images.footballfanatics.com/formula-1-merchandise/formula-1-japanese-grand-prix-2025-poster_ss5_p-203011437+pv-1+u-urx1xz09ikttj0lunf8y+v-wddozywyt1cqpsfdap10.jpg?_hv=2&w=1018);
-}
+        .feature h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
 
-.card {
-  background-color: var(--white);
-  border-radius: 10px;
-  width: 70%;
-  margin: auto;
-  margin-bottom: 10px;
-}
+        .feature p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
 
-.inner-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 10px;
-}
+        /* --- Video Section --- */
+        #audio {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
 
-.content {
-  font-family: "montserrat";
-  color: var(--text);
-  margin-bottom: 10px;
-}
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
 
-.flex {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-.main-price {
-  margin-right: 20px;
-  font-size: 30px;
-  font-family: "fraunces";
-  color: var(--red);
-}
+        /* --- Merch Section (Cards) --- */
+        #for_sale {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
 
-.old-price {
-  text-decoration: line-through;
-  color: var(--text);
-}
+        #for_sale h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
 
-.team {
-  font-family: "montserrat";
-  letter-spacing: 5px;
-  color: var(text);
-  text-transform: uppercase;
-}
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-.header {
-  font-family: "fraunces";
-  margin: 10px 0;
-  color: var(--header-text);
-}
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
 
-.add {
-  background-color: var(--red);
-  cursor: pointer;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  width: 100%;
-  color: var(--white);
-  font-family: "montserrat";
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
 
-@media only screen and (min-width: 600px) {
-  #nav-bar {
-    flex-direction: row;
-  }
-}
+        .inner-card {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-@media only screen and (450px < width 
-< 600px) {
-  .card {
-    font-size: 0.85rem;
-  }
-  .product-image {
-    height: 200px;
-  }
-}
-@media only screen and (450px <= width 
-< 600px) {
-  .card {
-    font-size: 0.85rem;
-  }
-  .product-image {
-    height: 400px;
-  }
-}
+        .team {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--f1-red);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+
+        .main-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--black);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #b1b1b1;
+        }
+
+        .add {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add:hover {
+            background: var(--f1-red);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            #nav-bar { flex-direction: column; height: auto; padding: 15px; }
+            #header { height: auto; }
+            #email-section { margin-top: 140px; }
+            .nav-links { margin-top: 15px; }
+            #email-section h2 { font-size: 1.8rem; }
+            #form { flex-direction: column; }
+        }
