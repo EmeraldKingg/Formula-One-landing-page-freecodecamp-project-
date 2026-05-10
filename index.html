@@ -10,3 +10,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <header id="header">
+        <nav id="nav-bar">
+            <a href="#" class="logo-container">
+                <img src="https://city-png.b-cdn.net/thumbnail/thumbnail_public/uploads/preview/hd-f1-the-official-formula-1-transparent-png-701751712229525ajvwddtfme.png?v=2025091016" alt="logo" id="header-img" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg'">
+                <span class="the-product">Formula One</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#teams" class="nav-link">Teams</a></li>
+                <li><a href="#drivers" class="nav-link">Drivers</a></li>
+                <li><a href="#races" class="nav-link">Races</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="email-section">
+        <h2>Lights Out and Away We Go!</h2>
+        <p style="margin-bottom: 20px; opacity: 0.9;">Join 2 million fans for daily paddock updates.</p>
+        <form action="https://www.freecodecamp.com/email-submit" id="form">
+            <input id="email" type="email" required placeholder="Enter your email address" name="email" />
+            <input type="submit" id="submit" value="SUBSCRIBE" />
+        </form>
+    </section>
+
+    <section class="features">
+        <div id="teams" class="feature">
+            <i class="ri-team-fill ri-3x icon"></i>
+            <h2>2025 F1 Teams</h2>
+            <p>From the dominance of McLaren and Red Bull to the resurgence of Ferrari, explore the technical powerhouses of the 2025 season.</p>
+        </div>
+        <div id="drivers" class="feature">
+            <i class="ri-steering-2-fill ri-3x icon"></i>
+            <h2>Elite Drivers</h2>
+            <p>Standings are led by Lando Norris and Oscar Piastri. Watch the battle between veteran legends and rising stars like Kimi Antonelli.</p>
+        </div>
+        <div id="races" class="feature">
+            <i class="ri-roadster-fill ri-3x icon"></i>
+            <h2>24 Grand Prix</h2>
+            <p>A global odyssey across 24 countries. From the glitz of Monaco to the night lights of Las Vegas.</p>
+        </div>
+    </section>
+
+    <section id="audio">
+        <div class="video-wrapper">
+            <iframe id="video" src="https://www.youtube.com/embed/xP_IDYmu_bU" title="F1 Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="for_sale">
+        <h2>Official 75th Anniversary Merch</h2>
+        <div class="product-cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="product-image" style="background-image: url('https://images.footballfanatics.com/formula-1-merchandise/formula-1-75-varsity-jacket_ss5_p-203082258+pv-1+u-e46rbrznsi8apeczl6wa+v-fciw5yjpuz3qnavib62n.jpg?_hv=2&w=1018')"></div>
+                <div class="inner-card">
+                    <div class="team">Apparel</div>
+                    <h3>F1 75 Varsity Jacket</h3>
+                    <p class="content">Celebrate 75 years of pace and passion. High-quality embroidery featuring iconic GP milestones since 1950.</p>
+                    <div class="flex">
+                        <p class="main-price">£19.00</p>
+                        <p class="old-price">£45.00</p>
+                    </div>
+                    <button class="add">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="product-image" style="background-image: url('https://images.footballfanatics.com/formula-1-merchandise/formula-1-2026-calendar_ss5_p-203133101+pv-1+u-pjwisbn4v1uuhbsoqunt+v-dmujjtapwiky8y7bohbz.jpg?_hv=2&w=1018')"></div>
+                <div class="inner-card">
+                    <div class="team">Accessories</div>
+                    <h3>2026 Season Calendar</h3>
+                    <p class="content">Never miss a session. Includes all 2026 Grand Prix dates, Sprint weekends, and circuit facts.</p>
+                    <div class="flex">
+                        <p class="main-price">£15.00</p>
+                        <p class="old-price">£25.00</p>
+                    </div>
+                    <button class="add">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="product-image" style="background-image: url('https://images.footballfanatics.com/formula-1-merchandise/formula-1-japanese-grand-prix-2025-poster_ss5_p-203011437+pv-1+u-urx1xz09ikttj0lunf8y+v-wddozywyt1cqpsfdap10.jpg?_hv=2&w=1018')"></div>
+                <div class="inner-card">
+                    <div class="team">Home & Decor</div>
+                    <h3>Suzuka GP 2025 Poster</h3>
+                    <p class="content">Limited edition Japanese Grand Prix artwork. High-gloss finish, perfect for any racing fan's wall.</p>
+                    <div class="flex">
+                        <p class="main-price">£39.00</p>
+                        <p class="old-price">£49.00</p>
+                    </div>
+                    <button class="add">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
