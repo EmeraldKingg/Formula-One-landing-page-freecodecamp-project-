@@ -8,26 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><span>F1 <span class="accent">ULTRA</span> 2026</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="drivers.html">Drivers</a></li>
-                <li><a href="hub.html">Teams & Circuits</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>2026: <span class="accent">THE NEW GRID</span></h1>
-            <p>Experience the 11-team era. New engines. New rivalries.</p>
-            <div class="hero-btns">
-                <a href="drivers.html" class="btn-primary">View Driver Grid</a>
-                <a href="hub.html" class="btn-secondary">Explore Circuits</a>
+    <header id="header">
+        <nav id="nav-bar">
+            <div class="logo">
+                <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo">
+                <span>ULTRA <span class="accent">2026</span></span>
             </div>
-        </div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="drivers.html">2026 Grid</a></li>
+                <li><a class="nav-link" href="hub.html">Hub</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <main>
+        <section id="hero">
+            <h1>The Future of Racing</h1>
+            <p>11 Teams. 100% Sustainable Fuel. The 2026 Revolution starts here.</p>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <input name="email" id="email" type="email" placeholder="Enter your email for updates" required>
+                <input id="submit" type="submit" value="Join the Paddock" class="btn">
+            </form>
+        </section>
+
+        <section id="features">
+            <div class="feature-card">
+                <i class="fas fa-engine"></i>
+                <h3>New Power Units</h3>
+                <p>Increased electrical power and the removal of the MGU-H.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-flag-checkered"></i>
+                <h3>Cadillac & Audi</h3>
+                <p>Welcome two titans to the world's most exclusive grid.</p>
+            </div>
+        </section>
+
+        <section id="video-section">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </section>
+    </main>
 </body>
 </html>
