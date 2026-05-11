@@ -3,82 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teams & Circuits | F1 Ultra 2026</title>
+    <title>Hub | F1 Ultra 2026</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <span>F1 <span class="accent">ULTRA</span> 2026</span>
-            </div>
+            <div class="logo"><span>F1 <span class="accent">ULTRA</span> 2026</span></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="drivers.html">Drivers</a></li>
-                <li><a href="#teams">Teams</a></li>
-                <li><a href="#circuits">Circuits</a></li>
+                <li><a href="hub.html" class="active">Hub</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Teams Section -->
-    <section id="teams" class="drivers-section" style="padding-top: 100px;">
-        <div class="container">
-            <div class="section-header">
-                <h2>The 2026 Constructors</h2>
-                <p>New power unit regulations meet legendary manufacturers.</p>
-            </div>
-            <div class="drivers-grid">
-                <!-- Team 1: Audi -->
-                <div class="driver-card" style="border-bottom-color: #F50537;">
-                    <div class="driver-info">
-                        <span class="team-tag">New Entry</span>
-                        <h3>Audi F1 Team</h3>
-                        <p>Taking over the Sauber entry, Audi enters with their own power unit and a point to prove in their debut season.</p>
-                    </div>
-                </div>
-                <!-- Team 2: Cadillac -->
-                <div class="driver-card" style="border-bottom-color: #909090;">
-                    <div class="driver-info">
-                        <span class="team-tag">New Entry</span>
-                        <h3>Cadillac F1 Team</h3>
-                        <p>The 11th team on the grid, bringing American muscle and General Motors' engineering to the pinnacle of motorsport.</p>
-                    </div>
-                </div>
-                <!-- Add more teams as needed -->
-            </div>
+    <section class="hub-container">
+        <h2>The 2026 Calendar</h2>
+        <div class="circuit-list">
+            <div class="circuit-item"><strong>Round 1:</strong> Australia - Albert Park</div>
+            <div class="circuit-item"><strong>Round 2:</strong> China - Shanghai</div>
+            <!-- Continue list -->
         </div>
     </section>
-
-    <!-- Circuits Section -->
-    <section id="circuits" class="features" style="background: #111;">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: white;">The 2026 Calendar</h2>
-                <p>24 Races across the globe.</p>
-            </div>
-            <div class="grid-3">
-                <div class="feature-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Australian GP</h3>
-                    <p>Albert Park | March 8, 2026</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Monaco GP</h3>
-                    <p>Circuit de Monaco | June 7, 2026</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Madrid GP</h3>
-                    <p>IFEMA Madrid | New for 2026</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 </body>
 </html>
