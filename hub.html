@@ -28,19 +28,105 @@
         <p>Debut of IFEMA Street Circuit</p>
       </div>
       <div class="event">
-        <span>🇦🇪 Abu Dhabi</span>
-        <p>Round 24: Season Finale</p>
-      </div>
-      <div class="event">
         <span>🇦🇪 China</span>
-        <p>Round 24: Season Finale</p>
+        <p>Round 2: Season Finale</p>
       </div>
      <div class="event">
-        <span>🇦🇪 Japan</span>
+        <span>🇯🇵 Japan</span>
+        <p>Round 3: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇺🇸 Miami</span>
+        <p>Round 4: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇨🇦 Canada</span>
+        <p>Round 5: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇲🇨 Monaco</span>
+        <p>Round 6: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇲🇨 Barcelona</span>
+        <p>Round 7: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇲🇨 Austria</span>
+        <p>Round 8: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇬🇧 Great Britain</span>
+        <p>Round 9: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇧🇪 Belgium</span>
+        <p>Round 10: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇲🇨 Hungary</span>
+        <p>Round 11: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇳🇱 Netherlands</span>
+        <p>Round 12: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇮🇹 Spain</span>
+        <p>Round 13: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇮🇹 Azerbaijan</span>
+        <p>Round 14: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇸🇬 Singapore</span>
+        <p>Round 15: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇺🇸 United States</span>
+        <p>Round 16: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇲🇽 Mexico</span>
+        <p>Round 17: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇧🇷 Brazil</span>
+        <p>Round 18: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇺🇸 Las Vegas</span>
+        <p>Round 19: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇶🇦 Qatar</span>
+        <p>Round 20: Season Finale</p>
+      </div>
+      <div class="event">
+        <span>🇦🇪 Abu Dhabi</span>
         <p>Round 24: Season Finale</p>
       </div>
     </div>
   </div>
+  
+  <script>
+  const faders = document.querySelectorAll('.driver-card, .event');
+  const options = { threshold: 0.2 };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.opacity = "1";
+      observer.unobserve(entry.target);
+    });
+  }, options);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
 </body>
 </html>
 
