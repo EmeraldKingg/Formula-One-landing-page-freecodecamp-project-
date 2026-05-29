@@ -40,6 +40,24 @@
       </div>
     </div>
   </div>
+
+  <script>
+  const faders = document.querySelectorAll('.driver-card, .event');
+  const options = { threshold: 0.2 };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.opacity = "1";
+      observer.unobserve(entry.target);
+    });
+  }, options);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
 </body>
 </html>
 
