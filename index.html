@@ -1,54 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Ultra 2026 | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Ultra 2026 | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="header">
-        <nav id="nav-bar">
-            <div class="logo">
-                <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo">
-                <span>ULTRA <span class="accent">2026</span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a class="nav-link" href="#features">Features</a></li>
-                <li><a class="nav-link" href="drivers.html">2026 Grid</a></li>
-                <li><a class="nav-link" href="hub.html">Season Hub</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header id="header">
+    <nav id="nav-bar">
+      <div class="logo">
+        <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo">
+        <span>ULTRA <span class="accent">2026</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="drivers.html">2026 Grid</a></li>
+        <li><a class="nav-link" href="hub.html">Season Hub</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="hero">
-            <h1>The Future of Racing</h1>
-            <p>11 Teams. 100% Sustainable Fuel. The 2026 Revolution starts here.</p>
-            <form id="form" action="https://www.freecodecamp.com/email-submit">
-                <input name="email" id="email" type="email" placeholder="Enter your email for updates" required>
-                <input id="submit" type="submit" value="Join the Paddock" class="btn">
-            </form>
-        </section>
+  <main>
+    <section id="hero">
+      <h1>The Future of Racing</h1>
+      <p>11 Teams. 100% Sustainable Fuel. The 2026 Revolution starts here.</p>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input name="email" id="email" type="email" placeholder="Enter your email for updates" required>
+        <input id="submit" type="submit" value="Join the Paddock" class="btn">
+      </form>
+    </section>
 
-        <section id="features">
-            <div class="feature-card" id="power-unit">
-                <i class="fas fa-bolt"></i>
-                <h3>New Power Units</h3>
-                <p>Increased electrical power and the removal of the MGU-H for closer racing.</p>
-            </div>
-            <div class="feature-card" id="new-teams">
-                <i class="fas fa-flag-checkered"></i>
-                <h3>Cadillac & Audi</h3>
-                <p>Welcome two automotive titans to the world's most exclusive grid.</p>
-            </div>
-        </section>
+    <section id="features">
+      <div class="feature-card">
+        <i class="fas fa-bolt"></i>
+        <h3>New Power Units</h3>
+        <p>Increased electrical power and the removal of the MGU-H for closer racing.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-flag-checkered"></i>
+        <h3>Cadillac & Audi</h3>
+        <p>Welcome two automotive titans to the world's most exclusive grid.</p>
+      </div>
+    </section>
 
-        <section id="video-section">
-            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-        </section>
-    </main>
-    <script src="api.js"></script>
+    <section id="teams">
+      <h2>The 11 Teams</h2>
+      <div class="team-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Red_Bull_Racing_logo.svg" alt="Red Bull">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3e/Mercedes_AMG_Petronas_Logo.svg" alt="Mercedes">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/Ferrari_Logo.svg" alt="Ferrari">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/McLaren_Logo.svg" alt="McLaren">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Aston_Martin_Logo.svg" alt="Aston Martin">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Alpine_Logo.svg" alt="Alpine">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Audi_logo.svg" alt="Audi">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3e/Williams_Logo.svg" alt="Williams">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3f/AlphaTauri_Logo.svg" alt="RB">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Cadillac_logo.svg" alt="Cadillac">
+      </div>
+    </section>
+
+    <section id="calendar">
+      <h2>2026 Season Highlights</h2>
+      <div class="timeline">
+        <div class="event">
+          <span>🇦🇺 Melbourne</span>
+          <p>Round 1: Australian GP</p>
+        </div>
+        <div class="event">
+          <span>🇪🇸 Madrid</span>
+          <p>Debut of IFEMA Street Circuit</p>
+        </div>
+        <div class="event">
+          <span>🇦🇪 Abu Dhabi</span>
+          <p>Round 24: Season Finale</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video-section">
+      <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </section>
+  </main>
 </body>
 </html>
